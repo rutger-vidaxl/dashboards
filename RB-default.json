@@ -1,0 +1,261 @@
+{
+  "rows": [
+    {
+      "label": "Right now",
+      "display": true,
+      "class": "row-y100",
+      "widgets": [
+        {
+          "module": "agent.status",
+          "settings": {
+            "push": false
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.status",
+          "settings": {
+            "type": "inbound",
+            "push": false
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.status",
+          "settings": {
+            "type": "outbound",
+            "push": false
+          },
+          "type": "module"
+        }
+      ]
+    },
+    {
+      "class": "row-y400",
+      "display": true,
+      "widgets": [
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Inbound right now - Categorized"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "label": {
+                    "text": "Inbound right now - Categorized"
+                  },
+                  "type": "bar-chart",
+                  "metric": "queues",
+                  "dataUrl": "/metrics/queues?enabled=true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Current agent activity"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "maxDisplayedItems": 10,
+                  "type": "object-table-agents",
+                  "tableData": "agents",
+                  "tableHeader": "header-current-agent-activity",
+                  "tableTemplate": "table-call-by-activity",
+                  "dataUrl": "/agents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Current call activity"
+          },
+          "class": "activity-calls",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "maxDisplayedItems": 10,
+                  "type": "object-table-calls",
+                  "tableData": "calls",
+                  "tableHeader": "header-current-call-activity",
+                  "tableTemplate": "table-call-by-agent",
+                  "dataUrl": "/calls/reporting?filters.domain=external&filters.state=in_progress&filters.state=queued&filters.state=ringing&filters.state=bridged&filters.state=scheduled",
+                  "items": [
+                    {
+                      "id": "3d688629e13c491798516dbde23c6ea8",
+                      "parentId": null,
+                      "sessionId": "c47a9cef719949eda4a3bae648d068a3",
+                      "conversationId": "74037dacdd2f4ddf892e8f3e11899409",
+                      "dateCreated": "2020-10-26T13:56:01.000Z",
+                      "dateEstablished": "2020-10-26T13:56:01.000Z",
+                      "dateFinished": null,
+                      "lastUpdated": "2020-10-26T13:56:01.000Z",
+                      "state": "in-progress",
+                      "finishReason": null,
+                      "from": "40743633627",
+                      "to": "40316300483",
+                      "type": "inbound",
+                      "source": "queue",
+                      "domain": "external",
+                      "duration": 449,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "--"
+                    },
+                    {
+                      "id": "0647025ba45d4a2fa9720f1695f9775f",
+                      "parentId": null,
+                      "sessionId": "d1ab517009144a11b81d9b68f21d6a71",
+                      "conversationId": "21833c5b9fac4c8590d515e30b96d636",
+                      "dateCreated": "2020-10-26T13:55:22.000Z",
+                      "dateEstablished": "2020-10-26T13:55:22.000Z",
+                      "dateFinished": null,
+                      "lastUpdated": "2020-10-26T13:55:28.000Z",
+                      "state": "queued",
+                      "finishReason": null,
+                      "from": "40727869476",
+                      "to": "40316300483",
+                      "type": "inbound",
+                      "source": "queue",
+                      "domain": "external",
+                      "duration": 36190,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "--",
+                      "_url": "https://services.babelforce.com/api/v2/calls/0647025ba45d4a2fa9720f1695f9775f"
+                    },
+                    {
+                      "id": "8f97dafbd26e4ed9ba117dad0947d29c",
+                      "parentId": null,
+                      "sessionId": "aa694718d4b643088b17f88c79863168",
+                      "conversationId": "d65dd24dfd104f828e718f879a79671e",
+                      "dateCreated": "2020-10-26T13:54:25.000Z",
+                      "dateEstablished": "2020-10-26T13:54:25.000Z",
+                      "dateFinished": null,
+                      "lastUpdated": "2020-10-26T13:54:30.000Z",
+                      "state": "queued",
+                      "finishReason": null,
+                      "from": "40216502007",
+                      "to": "40316300483",
+                      "type": "inbound",
+                      "source": "queue",
+                      "domain": "external",
+                      "duration": 93206,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "--",
+                      "_url": "https://services.babelforce.com/api/v2/calls/8f97dafbd26e4ed9ba117dad0947d29c"
+                    },
+                    {
+                      "id": "238e0572cdac4e62bd10b2291b6ae6b9",
+                      "parentId": null,
+                      "sessionId": "da55e1330d3545bc9fc6ca2fbf2cd3b4",
+                      "conversationId": "480c20d926e343b792cf382b3119aab1",
+                      "dateCreated": "2020-10-26T13:53:04.000Z",
+                      "dateEstablished": "2020-10-26T13:53:04.000Z",
+                      "dateFinished": null,
+                      "lastUpdated": "2020-10-26T13:53:10.000Z",
+                      "state": "queued",
+                      "finishReason": null,
+                      "from": "40770748932",
+                      "to": "40316300483",
+                      "type": "inbound",
+                      "source": "queue",
+                      "domain": "external",
+                      "duration": 174220,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "--",
+                      "_url": "https://services.babelforce.com/api/v2/calls/238e0572cdac4e62bd10b2291b6ae6b9"
+                    },
+                    {
+                      "id": "15529db56a7d4adb9316350dffce74ed",
+                      "parentId": null,
+                      "sessionId": "e18d990ed3e6404fbc18f86740fdabde",
+                      "conversationId": "83f6ba5923574a6ab91a9b63298f4c53",
+                      "dateCreated": "2020-10-26T13:43:17.000Z",
+                      "dateEstablished": "2020-10-26T13:43:17.000Z",
+                      "dateFinished": null,
+                      "lastUpdated": "2020-10-26T13:52:39.000Z",
+                      "state": "bridged",
+                      "finishReason": null,
+                      "from": "40744840340",
+                      "to": "40316300483",
+                      "type": "inbound",
+                      "source": "queue",
+                      "domain": "external",
+                      "duration": 761248,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Cristina Dita",
+                      "_url": "https://services.babelforce.com/api/v2/calls/15529db56a7d4adb9316350dffce74ed"
+                    },
+                    {
+                      "id": "f3c5f69b2c3a4d0e811bf749a7f65bf1",
+                      "parentId": null,
+                      "sessionId": "ad9667d13b784b3fa987cc04deed9868",
+                      "conversationId": "ce567de6ce5846b48a168d35fa4a5ca8",
+                      "dateCreated": "2020-10-26T13:52:13.000Z",
+                      "dateEstablished": "2020-10-26T13:52:13.000Z",
+                      "dateFinished": null,
+                      "lastUpdated": "2020-10-26T13:52:19.000Z",
+                      "state": "queued",
+                      "finishReason": null,
+                      "from": "40740063959",
+                      "to": "40316300483",
+                      "type": "inbound",
+                      "source": "queue",
+                      "domain": "external",
+                      "duration": 225234,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "--",
+                      "_url": "https://services.babelforce.com/api/v2/calls/f3c5f69b2c3a4d0e811bf749a7f65bf1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class": "row-y300",
+      "display": true,
+      "widgets": [
+        {
+          "module": "call.pie",
+          "settings": {
+            "type": "calls.inbound"
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.pie",
+          "settings": {
+            "type": "calls.inbound.missed"
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.pie",
+          "settings": {
+            "type": "calls.outbound"
+          },
+          "type": "module"
+        }
+      ]
+    }
+  ]
+}
