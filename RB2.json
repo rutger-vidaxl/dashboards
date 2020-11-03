@@ -1,0 +1,281 @@
+{
+  "type": "dashboard",
+  "label": {
+    "text": "Real-time Dashboard"
+  },
+  "rows": [
+    {
+      "label": "Right now",
+      "display": true,
+      "class": "row-y100",
+      "widgets": [
+        {
+          "module": "agent.status",
+          "settings": {
+            "push": false
+          }
+        },
+        {
+          "module": "call.status",
+          "settings": {
+            "type": "inbound",
+            "push": false
+          }
+        },
+        {
+          "module": "call.status",
+          "settings": {
+            "type": "outbound",
+            "push": false
+          }
+        }
+      ]
+    },
+    {
+      "class": "row-y400",
+      "display": true,
+      "widgets": [
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Inbound right now - Categorized"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "label": {
+                    "text": "Inbound right now - Categorized"
+                  },
+                  "type": "bar-chart",
+                  "metric": "queues",
+                  "dataUrl": "/metrics/queues?enabled=true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Current agent activity"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "maxDisplayedItems": 10,
+                  "type": "object-table-agents",
+                  "tableData": "agents",
+                  "tableHeader": "header-current-agent-activity",
+                  "tableTemplate": "table-call-by-activity",
+                  "dataUrl": "/agents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Current call activity"
+          },
+          "class": "activity-calls",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "maxDisplayedItems": 10,
+                  "type": "object-table-calls",
+                  "tableData": "calls",
+                  "tableHeader": "header-current-call-activity",
+                  "tableTemplate": "table-call-by-agent",
+                  "dataUrl": "/calls/reporting?filters.domain=external&filters.state=in_progress&filters.state=queued&filters.state=ringing&filters.state=bridged&filters.state=scheduled"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class": "row-y300",
+      "display": true,
+      "widgets": [
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Today's call data"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "label": {
+                    "text": "Offered total"
+                  },
+                  "type": "widget.number",
+                  "metric": "calls.total"
+                },
+                {
+                  "label": {
+                    "text": "Offered in queue"
+                  },
+                  "type": "widget.number",
+                  "metric": "queues.calls.total"
+                },
+                {
+                  "label": {
+                    "text": "Accepted"
+                  },
+                  "type": "widget.number",
+                  "metric": "calls.inbound.connected"
+                },
+                {
+                  "label": {
+                    "text": "Missed in queue"
+                  },
+                  "type": "widget.number",
+                  "metric": "calls.inbound.missed.queued"
+                },
+                {
+                  "label": {
+                    "text": "Missed total"
+                  },
+                  "type": "widget.number",
+                  "metric": "calls.inbound.missed"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Wait time / Abandon rate"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "label": {
+                    "text": "Avg. wait time"
+                  },
+                  "type": "widget.msToS",
+                  "metric": "queues.wait-time.avg",
+                  "params": {
+                    "bridgedOnly": false
+                  }
+                },
+                {
+                  "label": {
+                    "text": "Longest waiting call"
+                  },
+                  "type": "widget.sToMMSS",
+                  "metric": "queues.calls.waiting.total"
+                },
+                {
+                  "label": {
+                    "text": "Abandon rate"
+                  },
+                  "type": "widget.percentage",
+                  "metric": "abandon.value"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "In-call averages"
+          },
+          "rows": [
+            {
+              "display": true,
+              "class": "row-y100",
+              "widgets": [
+                {
+                  "label": {
+                    "text": "AHT"
+                  },
+                  "type": "widget.msToS",
+                  "metric": "queues.handle-time.avg"
+                },
+                {
+                  "label": {
+                    "text": "Avg. wrap",
+                    "class": "row-y100"
+                  },
+                  "type": "widget.msToS",
+                  "metric": "queues.wrapup.avg"
+                },
+                {
+                  "label": {
+                    "text": "Avg. hold time",
+                    "class": "row-y100"
+                  },
+                  "type": "widget.msToS",
+                  "metric": "calls.hold.avg",
+                  "params": {
+                    "heldCallsOnly": false
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Service level"
+          },
+          "rows": [
+            {
+              "display": true,
+              "class": "row-y100",
+              "widgets": [
+                {
+                  "label": {
+                    "text": "Service-Level 20 sec"
+                  },
+                  "type": "widget.percentage",
+                  "metric": "service-level.value",
+                  "params": {
+                    "bridgedOnly": true,
+                    "lessThan": 21,
+                    "queueOnly": true
+                  }
+                },
+                {
+                  "label": {
+                    "text": "Service-Level 30 sec"
+                  },
+                  "type": "widget.percentage",
+                  "metric": "service-level.value",
+                  "params": {
+                    "bridgedOnly": true,
+                    "lessThan": 31,
+                    "queueOnly": true
+                  }
+                },
+                {
+                  "label": {
+                    "text": "Service-Level 40 sec"
+                  },
+                  "type": "widget.percentage",
+                  "metric": "service-level.value",
+                  "params": {
+                    "bridgedOnly": true,
+                    "lessThan": 41,
+                    "queueOnly": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
