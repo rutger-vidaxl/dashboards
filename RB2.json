@@ -64,7 +64,7 @@
             {
               "widgets": [
                 {
-                  "maxDisplayedItems": 15,
+                  "maxDisplayedItems": 20,
                   "type": "object-table-agents",
                   "tableData": "agents",
                   "tableHeader": "header-current-agent-activity",
@@ -85,7 +85,7 @@
             {
               "widgets": [
                 {
-                  "maxDisplayedItems": 10,
+                  "maxDisplayedItems": 15,
                   "type": "object-table-calls",
                   "tableData": "calls",
                   "tableHeader": "header-current-call-activity",
