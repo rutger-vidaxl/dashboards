@@ -1,0 +1,350 @@
+{
+  "rows": [
+    {
+      "label": "Right now",
+      "display": true,
+      "class": "row-y100",
+      "widgets": [
+        {
+          "module": "agent.status",
+          "settings": {
+            "push": false
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.status",
+          "settings": {
+            "type": "inbound",
+            "push": false
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.status",
+          "settings": {
+            "type": "outbound",
+            "push": false
+          },
+          "type": "module"
+        }
+      ]
+    },
+    {
+      "class": "row-y400",
+      "display": true,
+      "widgets": [
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Inbound right now - Categorized"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "label": {
+                    "text": "Inbound right now - Categorized"
+                  },
+                  "type": "bar-chart",
+                  "metric": "queues",
+                  "dataUrl": "/metrics/queues?enabled=true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Current agent activity"
+          },
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "maxDisplayedItems": 10,
+                  "type": "object-table-agents",
+                  "tableData": "agents",
+                  "tableHeader": "header-current-agent-activity",
+                  "tableTemplate": "table-call-by-activity",
+                  "dataUrl": "/agents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "widget.group",
+          "label": {
+            "text": "Current call activity"
+          },
+          "class": "activity-calls",
+          "rows": [
+            {
+              "widgets": [
+                {
+                  "maxDisplayedItems": 10,
+                  "type": "object-table-calls",
+                  "tableData": "calls",
+                  "tableHeader": "header-current-call-activity",
+                  "tableTemplate": "table-call-by-agent",
+                  "dataUrl": "/calls/reporting?filters.domain=external&filters.state=in_progress&filters.state=queued&filters.state=ringing&filters.state=bridged&filters.state=scheduled",
+                  "items": [
+                    {
+                      "id": "9a849d08dfe84b40b47bb0136e1cf571",
+                      "parentId": "ec25a160e6b84bd8a9f323ba87a50f9d",
+                      "sessionId": "c2434692c1d1407ca049daba62f129b9",
+                      "conversationId": "8ac1fb9acc3744ec835a43412e12bd58",
+                      "dateCreated": "2020-11-11T07:25:46.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:46.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/9a849d08dfe84b40b47bb0136e1cf571"
+                    },
+                    {
+                      "id": "38455ae6d7554f7d8e197d29d7858d10",
+                      "parentId": "1b0f30523c824d74b2192f4633650cbb",
+                      "sessionId": "3d6b7a75ac0e405ca9c37ca1e9832279",
+                      "conversationId": "4830bfbfe547480695649feafa8a3137",
+                      "dateCreated": "2020-11-11T07:25:45.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:45.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/38455ae6d7554f7d8e197d29d7858d10"
+                    },
+                    {
+                      "id": "b2064f73111d4f15a07a2617244de6ca",
+                      "parentId": "c8034051bcc74eb28ee6d502772f2242",
+                      "sessionId": "427c0f22e9b74c5d81cce5d80512838e",
+                      "conversationId": "fe36613d59bd4090bcd4548c995be64c",
+                      "dateCreated": "2020-11-11T07:25:39.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:39.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/b2064f73111d4f15a07a2617244de6ca"
+                    },
+                    {
+                      "id": "e693a427339e43b9a30637beb6ff8e8f",
+                      "parentId": "be57a37f776f485a92552e1a129a5349",
+                      "sessionId": "b8c0a0a4ee4543c8852d5c156367a3d9",
+                      "conversationId": "5cd3c40cf5814fa2a7bd7a12cb87eb5c",
+                      "dateCreated": "2020-11-11T07:25:39.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:39.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/e693a427339e43b9a30637beb6ff8e8f"
+                    },
+                    {
+                      "id": "1764bc4051054fbe84b048ca1738b72e",
+                      "parentId": "2af676cfda904640ae59b5b4a5c50f36",
+                      "sessionId": "290eb45cd246464bab0f0ee41310ceeb",
+                      "conversationId": "f4e82b2a2e0441428fe0a02e6d3c6531",
+                      "dateCreated": "2020-11-11T07:25:39.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:39.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/1764bc4051054fbe84b048ca1738b72e"
+                    },
+                    {
+                      "id": "265d279ed0c549a3867bbe99d58b6b30",
+                      "parentId": "8b24e8f6852b4344bb555de6f88a0eea",
+                      "sessionId": "1574f67deb214c8aa63e65e85a330cae",
+                      "conversationId": "cfcbf28ad0c44a80a6b8eff1018537cf",
+                      "dateCreated": "2020-11-11T07:25:38.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:38.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/265d279ed0c549a3867bbe99d58b6b30"
+                    },
+                    {
+                      "id": "720cd210a4f245f684ab09983a1ea728",
+                      "parentId": "1a26045a265344a5a141f930879f779a",
+                      "sessionId": "986b55b1320543d0b0ec0ac39829e0e8",
+                      "conversationId": "c26773c750794e2e8ccaf38d97eeae96",
+                      "dateCreated": "2020-11-11T07:25:38.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:38.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/720cd210a4f245f684ab09983a1ea728"
+                    },
+                    {
+                      "id": "2fe21d15bbca4f3584da5e9f2aa74875",
+                      "parentId": "d498e05fcc7a4c169553053828912ba6",
+                      "sessionId": "cbd990e4627648f8b3b5b4be965998c5",
+                      "conversationId": "98c691b940a14c5f8c8ff49d264769da",
+                      "dateCreated": "2020-11-11T07:25:38.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:38.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/2fe21d15bbca4f3584da5e9f2aa74875"
+                    },
+                    {
+                      "id": "9991e42793e8477f9c2cedd5557bad65",
+                      "parentId": "2d595383b5a84136b6e587b49b8b5dc2",
+                      "sessionId": "7eeb6d35522a4c749337e8f284d09ff6",
+                      "conversationId": "d6258e739b744f649dd5d4406f3e450d",
+                      "dateCreated": "2020-11-11T07:25:29.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-11T07:25:29.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/9991e42793e8477f9c2cedd5557bad65"
+                    },
+                    {
+                      "id": "cd1e4112e4c049058bca828b8c0366f5",
+                      "parentId": "4ccec8c4c2d24de9bbf269b0dd10bd95",
+                      "sessionId": "3790b09d3a5c426cb5c4a120c2b70ccc",
+                      "conversationId": "558821bf2e174f8c83bc642a8208aac2",
+                      "dateCreated": "2020-11-02T09:16:45.000Z",
+                      "dateEstablished": null,
+                      "dateFinished": null,
+                      "lastUpdated": "2020-11-02T09:16:45.000Z",
+                      "state": "scheduled",
+                      "finishReason": null,
+                      "from": "39800597032",
+                      "to": "40755700967",
+                      "type": "outbound",
+                      "source": "api",
+                      "domain": "external",
+                      "duration": 0,
+                      "anonymous": false,
+                      "recordings": [],
+                      "bridged": "Petru Caucean",
+                      "_url": "https://services.babelforce.com/api/v2/calls/cd1e4112e4c049058bca828b8c0366f5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class": "row-y300",
+      "display": true,
+      "widgets": [
+        {
+          "module": "call.pie",
+          "settings": {
+            "type": "calls.inbound"
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.pie",
+          "settings": {
+            "type": "calls.inbound.missed"
+          },
+          "type": "module"
+        },
+        {
+          "module": "call.pie",
+          "settings": {
+            "type": "calls.outbound"
+          },
+          "type": "module"
+        }
+      ]
+    }
+  ]
+}
